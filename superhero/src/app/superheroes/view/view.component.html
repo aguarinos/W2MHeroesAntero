@@ -1,0 +1,21 @@
+<mat-card *ngIf="superHeroDetails$ | async as hero" class="hero-card">
+    <mat-card-header>
+      <mat-card-title>{{ hero.name }}</mat-card-title>
+      
+    </mat-card-header>
+    <img mat-card-image [src]="hero.image?.url" alt="{{ hero.name }}">
+    <mat-card-content>
+      <h3>Powerstats</h3>
+      <div class="stats">
+        <p>Intelligence: <span>{{ hero.powerstats?.intelligence }}</span></p>
+        <p>Strength: <span>{{ hero.powerstats?.strength }}</span></p>
+        <p>Speed: <span>{{ hero.powerstats?.speed }}</span></p>
+        <p>Durability: <span>{{ hero.powerstats?.durability }}</span></p>
+        <p>Power: <span>{{ hero.powerstats?.power }}</span></p>
+        <p>Combat: <span>{{ hero.powerstats?.combat }}</span></p>
+      </div>
+  
+      
+    </mat-card-content>
+  </mat-card>
+  

@@ -1,0 +1,17 @@
+.list-credit-cards{
+    margin: 20px;
+}
+img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .mat-card{
+    margin: 20px;
+  }
+
+  .count-card{
+    width: 24%;
+    margin: 5px;
+    padding: 20px;
+  }
