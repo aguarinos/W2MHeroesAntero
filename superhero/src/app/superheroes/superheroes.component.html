@@ -1,68 +1,30 @@
+<form [formGroup]="searchForm">
 
-<div class="mat-card" style="display:flex; flex-direction: row;">
+    <mat-toolbar class="search-block " [class.active]="true">
+            <mat-toolbar-row style="padding: 0 5px;">
+                <button class="search-icon" mat-icon-button disabled>
+            <mat-icon>search</mat-icon>
+          </button>
+          <input formControlName="searchBar" class="search-control" type="text" placeholder="Search">
+          <mat-spinner *ngIf="loading" class="spinner"></mat-spinner>
+          <button mat-icon-button class="example-icon" (click)="searchClose()">
+            <mat-icon>close</mat-icon>
+          </button> 
+      </mat-toolbar-row>
+      </mat-toolbar>
+</form>
 
-    <mat-card  class="mat-card count-card">
-        <mat-card-title>
-            Heroes
-        </mat-card-title>
-        <mat-card-content>
-            10
-        </mat-card-content>
+
+
+
+<div class="superHeroesGrid">
+    <mat-card *ngFor="let item of superHerosFilter" class="mat-card count-card">
+        <a [routerLink]="['view', item.id]">
+
+            <mat-card-header>
+              <mat-card-title>{{item.name|titlecase}}</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image [src]="item.image?.url" [alt]="item.name">
+        </a>
     </mat-card>
-    <mat-card  class="mat-card count-card">
-        <mat-card-title>
-            Heroes
-        </mat-card-title>
-        <mat-card-content>
-            10
-        </mat-card-content>
-    </mat-card>
-    <mat-card  class="mat-card count-card">
-        <mat-card-title>
-            Heroes
-        </mat-card-title>
-        <mat-card-content>
-            10
-        </mat-card-content>
-    </mat-card>
-</div>
-<mat-card class="mat-card count-card">
-    <mat-card-header>
-        <mat-card-title>
-            Listado de Heroes
-        </mat-card-title>
-    </mat-card-header>
-        <mat-card-content>
-            <table mat-table [dataSource]="dataSource" matSort>
-                <ng-container matColumnDef="select">
-                    <th mat-header-cell *matHeaderCellDef></th>
-                    <td mat-cell *matCellDef="let row">
-                        <mat-checkbox></mat-checkbox>
-                    </td>
-                </ng-container>
-                
-                <ng-container matColumnDef="image">
-                    <th mat-header-cell *matHeaderCellDef> Image Url </th>
-                    <td mat-cell *matCellDef="let element"> <img [src]="element.image.url" /> </td>
-                  </ng-container>
-                <ng-container matColumnDef="name">
-                    <th mat-header-cell *matHeaderCellDef>Nombre del heroe</th>
-                    <td mat-cell *matCellDef="let element">
-                        {{element.name}}
-                    </td>
-                </ng-container>
-                <ng-container matColumnDef="actions">
-                    <th mat-header-cell *matHeaderCellDef>Actions</th>
-                    <td mat-cell *matCellDef="let element">
-                        <a [routerLink]="['view', element.id]"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="pageview"></mat-icon>
-                        </a>
-                        <a [routerLink]="['edit', element.id]"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="mode_edit"></mat-icon></a>
-                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="delete" (click)="confirmDelete(element.id)"></mat-icon>
-                    </td>
-                </ng-container>
-                <tr mat-header-row *matHeaderRowDef="displayColums"></tr>
-                <tr mat-row *matRowDef="let row; columns: displayColums"></tr>
-            </table>
-            <mat-paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons="true"></mat-paginator>
-        </mat-card-content>
-    
+  </div>

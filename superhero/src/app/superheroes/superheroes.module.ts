@@ -17,6 +17,11 @@ import {MatButtonModule} from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ListHeroesComponent } from './list-heroes/list-heroes.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 
 
 
@@ -29,7 +34,8 @@ import { MatInputModule } from '@angular/material/input';
     AddComponent,
     ViewComponent,
     DeleteComponent,
-    EditComponent
+    EditComponent,
+    ListHeroesComponent
   ],
   imports: [
     CommonModule,
@@ -44,6 +50,9 @@ import { MatInputModule } from '@angular/material/input';
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
+    ReactiveFormsModule,
+    MatToolbarModule,
+    MatProgressSpinnerModule,
   ],
 })
 export class SuperheroesModule { }

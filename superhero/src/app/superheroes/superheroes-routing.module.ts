@@ -6,12 +6,14 @@ import { EditComponent } from './edit/edit.component';
 import { DeleteComponent } from './delete/delete.component';
 import { AddComponent } from './add/add.component';
 import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
+import { ListHeroesComponent } from './list-heroes/list-heroes.component';
 
 const routes: Routes = [{ path: '', component: SuperheroesComponent },
   {path: 'view/:id', component: ViewComponent},
   {path: 'edit/:id', component: EditComponent},
   {path: 'delete/:id', component: DeleteComponent},
   {path: 'add', component: AddComponent},
+  {path: 'list', component: ListHeroesComponent},
   {path: '**', component: PageNotFoundComponent},
 ];
 

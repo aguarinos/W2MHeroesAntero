@@ -16,6 +16,6 @@ export class ViewComponent {
   constructor(private superHeroService: SuperheroesService,
     private route: ActivatedRoute
   ){
-    this.superHeroDetails$ = this.superHeroService.getSuperHeroeById(parseInt(this.route.snapshot.paramMap.get("id") || ""))
+    this.superHeroDetails$ = this.superHeroService.getSuperHeroeById(this.route.snapshot.paramMap.get("id") || "")
   }
 }

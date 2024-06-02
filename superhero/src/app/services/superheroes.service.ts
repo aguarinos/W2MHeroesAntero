@@ -20,7 +20,7 @@ export class SuperheroesService {
     return this.httpClient.get<Superhero[]>(this.apiUrl)
   }
 
-  getSuperHeroeById(id: Number): Observable<Superhero>{
+  getSuperHeroeById(id: string): Observable<Superhero>{
   const url = `${this.apiUrl}/${id}`
     return this.httpClient.get<Superhero>(url)
   }
@@ -30,7 +30,7 @@ export class SuperheroesService {
     return this.httpClient.put<Superhero>(url, superHero)
   }
 
-  deleteSuperHeroe(id: Number) : Observable<void>{
+  deleteSuperHeroe(id: string) : Observable<void>{
     const url = `${this.apiUrl}/${id}`
     return this.httpClient.delete<void>(url)
   }
