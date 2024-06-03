@@ -1,42 +1,70 @@
-<mat-card  class="hero-card">
-    <mat-card-header>
-      <mat-card-title> Edita tu heroe</mat-card-title>
+<mat-card class="hero-card">
+  <mat-card-header>
+    <mat-card-title> Edita tu heroe</mat-card-title>
+  </mat-card-header>
+  <!-- <img mat-card-image [src]="hero.image.url" alt="{{ hero.name }}"> -->
+  <mat-card-content>
+    <form [formGroup]="editHeroForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <mat-form-field>
+          <label>Nombre</label>
+          <input
+            class="uppercase-input"
+            matInput
+            placeholder="Introduce el nombre del heroe"
+            formControlName="name"
+          />
+          <mat-error
+            *ngIf="
+              editHeroForm.controls['name']?.touched &&
+              editHeroForm.controls['name']?.hasError('required')
+            "
+            >El campo Nombre es requerido</mat-error
+          >
+          <mat-error
+            *ngIf="
+              editHeroForm.controls['name']?.touched &&
+              editHeroForm.controls['name']?.hasError('minlength')
+            "
+            >El Nombre es muy pequeño</mat-error
+          >
+          <mat-error
+            *ngIf="
+              editHeroForm.controls['name']?.touched &&
+              editHeroForm.controls['name']?.hasError('maxlength')
+            "
+            >El Nombre es muy largo</mat-error
+          >
+        </mat-form-field>
+      </div>
 
-    </mat-card-header>
-    <!-- <img mat-card-image [src]="hero.image.url" alt="{{ hero.name }}"> -->
-    <mat-card-content>
-        <form [formGroup]="editHeroForm" (ngSubmit)="onSubmit()">
-            <div class="form-group">
-                <mat-form-field>
-                    <label>Nombre</label>
-                    <input matInput placeholder="Introduce el nombre del heroe" formControlName="name">
-                    <mat-error *ngIf="editHeroForm.controls['name']?.touched && editHeroForm.controls['name']?.hasError('required')">El campo Nombre es requerido</mat-error>
-                    <mat-error *ngIf="editHeroForm.controls['name']?.touched && editHeroForm.controls['name']?.hasError('minlength')">El Nombre es muy pequeño</mat-error>
-                    <mat-error *ngIf="editHeroForm.controls['name']?.touched && editHeroForm.controls['name']?.hasError('maxlength')">El Nombre es muy largo</mat-error>
-                </mat-form-field>
-            </div>
-
-            <!-- <div class="form-group"> 
-                <mat-form-field>
-
-                
-                    <label>Imagen</label>
-                    <input matInput placeholder="Introduce el nombre del heroe" name="image">
-                    <mat-error *ngIf="editHeroForm.controls['image']?.touched && editHeroForm.controls['image']?.hasError('required')">El campo Imagen es requerido</mat-error>
-                   
-                </mat-form-field>
-            </div> -->
-            <div class="form-group" formGroupName="image">
-                <mat-form-field>
-                  <label for="url">Imagen</label>
-                  <input matInput id="url" formControlName="url" >
-                  <mat-error *ngIf="editHeroForm.controls['image']?.touched && editHeroForm.controls['image']?.invalid">El campo Imagen no es correcto</mat-error>
-                </mat-form-field>
-              </div>
-            <img *ngIf="!editHeroForm.controls['image']?.invalid" mat-card-image [src]="editHeroForm.get('image.url')?.value || ''">
-            <div class="form-group">
-                <button mat-raised-button color="primary" [disabled]="!editHeroForm.valid">Finalizar edición</button>
-            </div>
-        </form>
-    </mat-card-content>
+      <div class="form-group" formGroupName="image">
+        <mat-form-field>
+          <label for="url">Imagen</label>
+          <input matInput id="url" formControlName="url" />
+          <mat-error
+            *ngIf="
+              editHeroForm.controls['image']?.touched &&
+              editHeroForm.controls['image']?.invalid
+            "
+            >El campo Imagen no es correcto</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <img
+        *ngIf="!editHeroForm.controls['image']?.invalid"
+        mat-card-image
+        [src]="editHeroForm.get('image.url')?.value || ''"
+      />
+      <div class="form-group">
+        <button
+          mat-raised-button
+          color="primary"
+          [disabled]="!editHeroForm.valid"
+        >
+          Finalizar edición
+        </button>
+      </div>
+    </form>
+  </mat-card-content>
 </mat-card>

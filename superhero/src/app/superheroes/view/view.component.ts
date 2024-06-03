@@ -7,15 +7,17 @@ import { SuperheroesService } from 'src/app/services/superheroes.service';
 @Component({
   selector: 'app-view',
   templateUrl: './view.component.html',
-  styleUrls: ['./view.component.css']
+  styleUrls: ['./view.component.css'],
 })
 export class ViewComponent {
+  superHeroDetails$: Observable<Superhero> | undefined;
 
-  superHeroDetails$ : Observable<Superhero> | undefined;
-
-  constructor(private superHeroService: SuperheroesService,
+  constructor(
+    private superHeroService: SuperheroesService,
     private route: ActivatedRoute
-  ){
-    this.superHeroDetails$ = this.superHeroService.getSuperHeroeById(this.route.snapshot.paramMap.get("id") || "")
+  ) {
+    this.superHeroDetails$ = this.superHeroService.getSuperHeroeById(
+      this.route.snapshot.paramMap.get('id') || ''
+    );
   }
 }

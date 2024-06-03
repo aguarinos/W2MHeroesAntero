@@ -1,36 +1,75 @@
-<mat-card  class="hero-card">
-    <mat-card-header>
-      <mat-card-title>Crea un nuevo heroe</mat-card-title>
-
-    </mat-card-header>
-    <!-- <img mat-card-image [src]="hero.image.url" alt="{{ hero.name }}"> -->
-    <mat-card-content>
-        <form #heroForm="ngForm" (ngSubmit)="saveHero()">
-            <div class="form-group">
-                <mat-form-field>
-                    <label>Nombre</label>
-                    <input matInput placeholder="Introduce el nombre del heroe" name="name" [(ngModel)]="superHero.name" required minlength="3" maxlength="20">
-                    <mat-error *ngIf="heroForm.controls['name']?.touched && heroForm.controls['name']?.hasError('required')">El campo Nombre es requerido</mat-error>
-                    <mat-error *ngIf="heroForm.controls['name']?.touched && heroForm.controls['name']?.hasError('minlength')">El campo Nombre es demasiado corto</mat-error>
-                    <mat-error *ngIf="heroForm.controls['name']?.touched && heroForm.controls['name']?.hasError('maxlength')">El campo Nombre es demasiado largo</mat-error>
-                </mat-form-field>
-            </div>
-                <div class="form-group"> 
-                <mat-form-field>
-
-                
-                    <label>Imagen</label>
-                    <input matInput placeholder="Introduce el nombre del heroe" name="image" [(ngModel)]="superHero.image!.url" required>
-                    <mat-error *ngIf="heroForm.controls['image']?.touched && heroForm.controls['image']?.hasError('required')">El campo Imagen es requerido</mat-error>
-                   
-                </mat-form-field>
-            </div>
-            <img mat-card-image [src]="superHero.image!.url" alt="{{ superHero.name }}">
-            <div class="form-group">
-                <button mat-raised-button color="primary" [disabled]="!heroForm.valid">Crear nuevo heroe</button>
-            </div>
-        </form>
-    
-    </mat-card-content>
-  </mat-card>
-  
+<mat-card class="hero-card">
+  <mat-card-header>
+    <mat-card-title>Crea un nuevo heroe</mat-card-title>
+  </mat-card-header>
+  <!-- <img mat-card-image [src]="hero.image.url" alt="{{ hero.name }}"> -->
+  <mat-card-content>
+    <form #heroForm="ngForm" (ngSubmit)="saveHero()">
+      <div class="form-group">
+        <mat-form-field>
+          <label>Nombre</label>
+          <input
+            class="uppercase-input"
+            matInput
+            placeholder="Introduce el nombre del heroe"
+            name="name"
+            [(ngModel)]="superHero.name"
+            required
+            minlength="3"
+            maxlength="20"
+          />
+          <mat-error
+            *ngIf="
+              heroForm.controls['name']?.touched &&
+              heroForm.controls['name']?.hasError('required')
+            "
+            >El campo Nombre es requerido</mat-error
+          >
+          <mat-error
+            *ngIf="
+              heroForm.controls['name']?.touched &&
+              heroForm.controls['name']?.hasError('minlength')
+            "
+            >El campo Nombre es demasiado corto</mat-error
+          >
+          <mat-error
+            *ngIf="
+              heroForm.controls['name']?.touched &&
+              heroForm.controls['name']?.hasError('maxlength')
+            "
+            >El campo Nombre es demasiado largo</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field>
+          <label>Imagen</label>
+          <input
+            matInput
+            placeholder="Introduce el nombre del heroe"
+            name="image"
+            [(ngModel)]="superHero.image!.url"
+            required
+          />
+          <mat-error
+            *ngIf="
+              heroForm.controls['image']?.touched &&
+              heroForm.controls['image']?.hasError('required')
+            "
+            >El campo Imagen es requerido</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <img
+        mat-card-image
+        [src]="superHero.image!.url"
+        alt="{{ superHero.name }}"
+      />
+      <div class="form-group">
+        <button mat-raised-button color="primary" [disabled]="!heroForm.valid">
+          Crear nuevo heroe
+        </button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

@@ -2,56 +2,6 @@
   "heroes": [
     {
       "response": "success",
-      "id": "4",
-      "name": "Abomination",
-      "powerstats": {
-        "intelligence": "63",
-        "strength": "80",
-        "speed": "53",
-        "durability": "90",
-        "power": "62",
-        "combat": "95"
-      },
-      "biography": {
-        "fullname": "Emil Blonsky",
-        "alteregos": "No alter egos found.",
-        "aliases": [
-          "Agent R-7",
-          "Ravager of Worlds"
-        ],
-        "placeofbirth": "Zagreb, Yugoslavia",
-        "firstappearance": "Tales to Astonish #90",
-        "publisher": "Marvel Comics",
-        "alignment": "bad"
-      },
-      "appearance": {
-        "gender": "Male",
-        "race": "Human / Radiation",
-        "height": [
-          "6'8",
-          "203 cm"
-        ],
-        "weight": [
-          "980 lb",
-          "441 kg"
-        ],
-        "eyecolor": "Green",
-        "haircolor": "No Hair"
-      },
-      "work": {
-        "occupation": "Ex-Spy",
-        "base": "Mobile"
-      },
-      "connections": {
-        "groupaffiliation": "former member of the crew of the Andromeda Starship, ally of the Abominations and Forgotten",
-        "relatives": "Nadia Dornova Blonsky (wife, separated)"
-      },
-      "image": {
-        "url": "https://www.superherodb.com/pictures2/portraits/10/100/1.jpg"
-      }
-    },
-    {
-      "response": "success",
       "id": "5",
       "name": "Abraxas",
       "powerstats": {

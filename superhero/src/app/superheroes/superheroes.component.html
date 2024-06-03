@@ -1,30 +1,30 @@
 <form [formGroup]="searchForm">
-
-    <mat-toolbar class="search-block " [class.active]="true">
-            <mat-toolbar-row style="padding: 0 5px;">
-                <button class="search-icon" mat-icon-button disabled>
-            <mat-icon>search</mat-icon>
-          </button>
-          <input formControlName="searchBar" class="search-control" type="text" placeholder="Search">
-          <mat-spinner *ngIf="loading" class="spinner"></mat-spinner>
-          <button mat-icon-button class="example-icon" (click)="searchClose()">
-            <mat-icon>close</mat-icon>
-          </button> 
-      </mat-toolbar-row>
-      </mat-toolbar>
+  <mat-toolbar class="search-block" [class.active]="true">
+    <mat-toolbar-row style="padding: 0 5px">
+      <button class="search-icon" mat-icon-button disabled>
+        <mat-icon>search</mat-icon>
+      </button>
+      <input
+        formControlName="searchBar"
+        class="search-control"
+        type="text"
+        placeholder="Search"
+      />
+      <mat-spinner *ngIf="loading" class="spinner"></mat-spinner>
+      <button mat-icon-button class="example-icon" (click)="searchClose()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
 </form>
 
-
-
-
 <div class="superHeroesGrid">
-    <mat-card *ngFor="let item of superHerosFilter" class="mat-card count-card">
-        <a [routerLink]="['view', item.id]">
-
-            <mat-card-header>
-              <mat-card-title>{{item.name|titlecase}}</mat-card-title>
-            </mat-card-header>
-            <img mat-card-image [src]="item.image?.url" [alt]="item.name">
-        </a>
-    </mat-card>
-  </div>
+  <mat-card *ngFor="let item of superHerosFilter" class="mat-card count-card">
+    <a [routerLink]="['view', item.id]">
+      <mat-card-header>
+        <mat-card-title>{{ item.name | titlecase }}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image [src]="item.image?.url" [alt]="item.name" />
+    </a>
+  </mat-card>
+</div>

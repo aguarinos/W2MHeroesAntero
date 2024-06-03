@@ -7,45 +7,46 @@ import { SuperheroesService } from 'src/app/services/superheroes.service';
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
-  styleUrls: ['./add.component.css']
+  styleUrls: ['./add.component.css'],
 })
-export class AddComponent implements OnDestroy{
-
-  private subscription?: Subscription
-  constructor(private superHeroService: SuperheroesService,
+export class AddComponent implements OnDestroy {
+  private subscription?: Subscription;
+  constructor(
+    private superHeroService: SuperheroesService,
     private router: Router
-  ){
-    
-  }
-
-  superHero : Superhero = {
-  id: undefined,
-  name: "",
-  image: {
-    url : ""
-  },
-  powerstats: {
-    intelligence: "69",
-    strength: "10",
-    speed: "33",
-    durability: "40",
-    power: "37",
-    combat: "50"
-  }
-
-}
-
+  ) {}
+  superHero: Superhero = {
+    id: undefined,
+    name: '',
+    image: {
+      url: '',
+    },
+    powerstats: {
+      intelligence: '69',
+      strength: '10',
+      speed: '33',
+      durability: '40',
+      power: '37',
+      combat: '50',
+    },
+  };
   saveHero() {
-   this.subscription=  this.superHeroService.createSuperHeroe(this.superHero).subscribe((data)=>{
-      this.router.navigate(['superheroes'])
-      alert("Heroe creado correctamente")
-    })
+    this.subscription = this.superHeroService
+      .createSuperHeroe(this.superHero)
+      .subscribe(
+        (data) => {
+          this.router.navigate(['superheroes']);
+          alert('Heroe creado correctamente');
+        },
+        (error) => {
+          alert('Error, no se ha podido crear el heroe');
+        }
+      );
   }
 
-  ngOnDestroy(){
-    if(this.subscription){
-      this.subscription.unsubscribe()
+  ngOnDestroy() {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
     }
   }
-
 }

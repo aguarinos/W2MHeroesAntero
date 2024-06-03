@@ -7,27 +7,28 @@ import { SuperheroesService } from 'src/app/services/superheroes.service';
 @Component({
   selector: 'app-delete',
   templateUrl: './delete.component.html',
-  styleUrls: ['./delete.component.css']
+  styleUrls: ['./delete.component.css'],
 })
 export class DeleteComponent {
-  private subscription?: Subscription
+  private subscription?: Subscription;
 
   constructor(
     public dialogRef: MatDialogRef<DeleteComponent>,
     @Inject(MAT_DIALOG_DATA) public data: number,
-    private superHeroService:SuperheroesService
+    private superHeroService: SuperheroesService
   ) {}
 
   onSiClick(): void {
-    this. subscription = this.superHeroService.deleteSuperHeroe(this.data.toString()).subscribe()
+    this.subscription = this.superHeroService
+      .deleteSuperHeroe(this.data.toString())
+      .subscribe({
+        error: (e) => alert('Error, ha ocurrido algo inesperado'),
+      });
     this.dialogRef.close();
-  } 
-
-  ngOnDestroy(){
-    if(this.subscription){
-      this.subscription.unsubscribe()
+  }
+  ngOnDestroy() {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
     }
   }
 }
-
-
