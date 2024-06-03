@@ -54,7 +54,6 @@ ngOnInit(){
     tap(()=>this.loading = true),
     debounceTime(1000),
 ).subscribe(data =>{
-  console.log(data)
   this.loading = false;
   if(data ===""){
     this.superHerosFilter = this.superHeros
