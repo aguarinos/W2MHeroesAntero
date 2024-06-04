@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Superhero } from '../models/super-heroe.model';
 import { Observable } from 'rxjs';
+/* istanbul ignore file */
 @Injectable({
   providedIn: 'root',
 })

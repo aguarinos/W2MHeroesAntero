@@ -2,111 +2,7 @@
   "heroes": [
     {
       "response": "success",
-      "id": "5",
-      "name": "Abraxas",
-      "powerstats": {
-        "intelligence": "88",
-        "strength": "63",
-        "speed": "83",
-        "durability": "100",
-        "power": "100",
-        "combat": "55"
-      },
-      "biography": {
-        "fullname": "Abraxas",
-        "alteregos": "No alter egos found.",
-        "aliases": [
-          "-"
-        ],
-        "placeofbirth": "Within Eternity",
-        "firstappearance": "Fantastic Four Annual #2001",
-        "publisher": "Marvel Comics",
-        "alignment": "bad"
-      },
-      "appearance": {
-        "gender": "Male",
-        "race": "Cosmic Entity",
-        "height": [
-          "-",
-          "0 cm"
-        ],
-        "weight": [
-          "- lb",
-          "0 kg"
-        ],
-        "eyecolor": "Blue",
-        "haircolor": "Black"
-      },
-      "work": {
-        "occupation": "Dimensional destroyer",
-        "base": "-"
-      },
-      "connections": {
-        "groupaffiliation": "Cosmic Beings",
-        "relatives": "Eternity (\"Father\")"
-      },
-      "image": {
-        "url": "https://www.superherodb.com/pictures2/portraits/10/100/181.jpg"
-      }
-    },
-    {
-      "response": "success",
-      "id": "6",
-      "name": "Absorbing Man",
-      "powerstats": {
-        "intelligence": "38",
-        "strength": "80",
-        "speed": "25",
-        "durability": "100",
-        "power": "98",
-        "combat": "64"
-      },
-      "biography": {
-        "fullname": "Carl Creel",
-        "alteregos": "No alter egos found.",
-        "aliases": [
-          "Greithoth",
-          "\"Crusher\" Creel",
-          "Rocky Davis",
-          "Dynamite Davis",
-          "Lightningbolt",
-          "Prisoner #24957"
-        ],
-        "placeofbirth": "New York City, New York",
-        "firstappearance": "Daredevil #1 (April, 1964) (As Rocky Davis)",
-        "publisher": "Marvel Comics",
-        "alignment": "bad"
-      },
-      "appearance": {
-        "gender": "Male",
-        "race": "Human",
-        "height": [
-          "6'4",
-          "193 cm"
-        ],
-        "weight": [
-          "270 lb",
-          "122 kg"
-        ],
-        "eyecolor": "Blue",
-        "haircolor": "No Hair"
-      },
-      "work": {
-        "occupation": "Professional criminal; former professional boxer",
-        "base": "-"
-      },
-      "connections": {
-        "groupaffiliation": "Masters of Evil, Lethal Legion; formerly Worthy, Frightful Four: former agent of Loki and They Who Wield Power",
-        "relatives": "Mary MacPherran (Titania) (wife); Jerry Sledge (son); Rockwell \"Rocky\" Davis (Hi-Llite) (cousin)"
-      },
-      "image": {
-        "url": "https://www.superherodb.com/pictures2/portraits/10/100/1448.jpg"
-      }
-    },
-    {
-      "response": "success",
-      "id": "7",
-      "name": "Adam Monroe",
+      "name": "Adam Monre",
       "powerstats": {
         "intelligence": "63",
         "strength": "10",
@@ -115,43 +11,10 @@
         "power": "100",
         "combat": "64"
       },
-      "biography": {
-        "fullname": "",
-        "alteregos": "No alter egos found.",
-        "aliases": [
-          "Takezo Kensei",
-          "Richard Sanders"
-        ],
-        "placeofbirth": "-",
-        "firstappearance": "Heroes S02E01 - Four Months Later...",
-        "publisher": "NBC - Heroes",
-        "alignment": "good"
-      },
-      "appearance": {
-        "gender": "Male",
-        "race": "null",
-        "height": [
-          "-",
-          "0 cm"
-        ],
-        "weight": [
-          "- lb",
-          "0 kg"
-        ],
-        "eyecolor": "Blue",
-        "haircolor": "Blond"
-      },
-      "work": {
-        "occupation": "former samurai swordsman, former British mercenary commander, former soldier in the Confederate Army",
-        "base": "U.S.; formerly Diedenshausen, Germany; Milan, Italy; Paris, France; Japan; England; Atlanta, GA; Montreal, Canada"
-      },
-      "connections": {
-        "groupaffiliation": "-",
-        "relatives": "-"
-      },
       "image": {
         "url": "https://www.superherodb.com/pictures2/portraits/10/100/1026.jpg"
-      }
+      },
+      "id": "7"
     },
     {
       "response": "success",

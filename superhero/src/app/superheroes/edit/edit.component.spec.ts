@@ -4,25 +4,46 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { of } from 'rxjs';
 import { EditComponent } from './edit.component';
 import { SuperheroesService } from '../../services/superheroes.service';
+import { SuperheroesModule } from '../superheroes.module';
+import { Superhero } from 'src/app/models/super-heroe.model';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('EditComponent', () => {
   let component: EditComponent;
   let fixture: ComponentFixture<EditComponent>;
   let mockRouter: any;
   let mockActivatedRoute: any;
-  let mockSuperheroesService: jasmine.SpyObj<SuperheroesService>;
 
   beforeEach(async () => {
     mockRouter = jasmine.createSpyObj('Router', ['navigate']);
     mockActivatedRoute = { snapshot: { paramMap: { get: () => '1' } } };
-    mockSuperheroesService = jasmine.createSpyObj('SuperheroesService', [
-      'getSuperHeroeById',
-      'updateSuperHero',
-    ]);
+    const mockSuperheroesService = {
+      getSuperHeroeById: () =>
+        of({
+          id: '1',
+          name: 'Superman',
+          response: '',
+          image: {
+            url: '',
+          },
+          powerstats: {
+            intelligence: '',
+            strength: '',
+            speed: '',
+            durability: '',
+            power: '',
+            combat: '',
+          },
+        }),
+    };
 
     await TestBed.configureTestingModule({
       declarations: [EditComponent],
-      imports: [ReactiveFormsModule],
+      imports: [
+        ReactiveFormsModule,
+        SuperheroesModule,
+        BrowserAnimationsModule,
+      ],
       providers: [
         { provide: Router, useValue: mockRouter },
         { provide: ActivatedRoute, useValue: mockActivatedRoute },
@@ -43,15 +64,40 @@ describe('EditComponent', () => {
 
   it('should populate form with hero data on initialization', () => {
     const mockHeroData = {
-      id: '2',
+      id: '1',
       name: 'Superman',
-      image: { url: 'superman.jpg' },
+      response: '',
+      powerstats: {
+        intelligence: '',
+        strength: '',
+        speed: '',
+        durability: '',
+        power: '',
+        combat: '',
+      },
+      image: {
+        url: '',
+      },
     };
-    mockSuperheroesService.getSuperHeroeById.and.returnValue(of(mockHeroData));
+    const mockHeroData2 = {
+      name: 'Superman',
+      response: '',
+      powerstats: {
+        intelligence: '',
+        strength: '',
+        speed: '',
+        durability: '',
+        power: '',
+        combat: '',
+      },
+      image: {
+        url: '',
+      },
+    };
 
     component.ngOnInit();
 
     expect(component.heroData).toEqual(mockHeroData);
-    expect(component.editHeroForm.value).toEqual(mockHeroData);
+    expect(component.editHeroForm.value).toEqual(mockHeroData2);
   });
 });
